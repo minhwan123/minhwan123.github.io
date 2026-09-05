@@ -533,6 +533,47 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 }
 .timeline-content .tag-list { margin-top: 4px; }
 
+/* Publications */
+.pub-list { border-top: 1px solid var(--border); }
+.pub-item {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  gap: 28px;
+  padding: 28px 0;
+  border-bottom: 1px solid var(--border);
+}
+.pub-year {
+  font-family: var(--font-mono);
+  font-size: var(--fs-micro);
+  letter-spacing: 0.06em;
+  color: var(--text-tertiary);
+  padding-top: 4px;
+}
+.pub-content { display: grid; gap: 10px; }
+.pub-title {
+  font-size: var(--fs-h3);
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  line-height: 1.45;
+}
+.pub-authors { font-size: var(--fs-small); color: var(--text-primary); }
+.pub-authors strong { font-weight: 600; }
+.pub-venue { font-size: var(--fs-small); color: var(--text-secondary); }
+.pub-content .tag-list { margin-top: 2px; }
+.pub-content .project-links { margin-top: 4px; padding-top: 0; }
+
+/* 한 섹션 안에서 항목을 묶는 소제목 (Awards / Certificates 등) */
+.group-label {
+  font-family: var(--font-mono);
+  font-size: var(--fs-micro);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+.group-label + .award-list + .group-label { margin-top: 48px; }
+
 /* Awards */
 .award-list { border-top: 1px solid var(--border); }
 .award-item {
@@ -665,11 +706,12 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   .fact,
   .timeline-item,
   .award-item,
+  .pub-item,
   .contact-item {
     grid-template-columns: 1fr;
     gap: 8px;
   }
-  .fact dt, .timeline-period, .award-year, .contact-key { padding-top: 0; }
+  .fact dt, .timeline-period, .award-year, .pub-year, .contact-key { padding-top: 0; }
 
   .intro-grid {
     grid-template-columns: 1fr;
