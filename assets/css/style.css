@@ -313,7 +313,27 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
     radial-gradient(900px 420px at 12% -10%, var(--accent-soft), transparent 70%);
   pointer-events: none;
 }
-.hero-inner { position: relative; max-width: 860px; }
+.hero-inner { position: relative; }
+
+.hero-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) clamp(200px, 22vw, 268px);
+  gap: clamp(32px, 6vw, 72px);
+  align-items: center;
+}
+.hero-content { max-width: 640px; }
+
+.hero-portrait { margin: 0; }
+.hero-portrait img {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  object-position: center 15%;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-md);
+  background: var(--bg-subtle);
+}
 
 .hero-eyebrow {
   font-family: var(--font-mono);
@@ -655,6 +675,10 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
     gap: 8px;
   }
   .fact dt, .timeline-period, .award-year, .contact-key { padding-top: 0; }
+
+  .hero-layout { grid-template-columns: 1fr; gap: 32px; }
+  .hero-content { max-width: none; }
+  .hero-portrait { order: -1; width: min(176px, 48%); }
 
   .hero-actions .btn { flex: 1 1 auto; min-width: 132px; }
   .project-grid { grid-template-columns: 1fr; }
