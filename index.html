@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- TODO: 실제 정보 확정 후 교체 -->
+  <title>[NAME] — Portfolio</title>
+  <meta name="description" content="[SHORT INTRODUCTION] — AI / Data Science / Computer Vision Engineer Portfolio" />
+  <meta name="author" content="[NAME]" />
+  <meta name="theme-color" content="#ffffff" />
+
+  <!-- Open Graph (내용 확정 후 채우기) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="[NAME] — Portfolio" />
+  <meta property="og:description" content="[SHORT INTRODUCTION]" />
+  <!-- <meta property="og:image" content="assets/img/og-image.png" /> -->
+  <!-- <meta property="og:url" content="https://[USERNAME].github.io/" /> -->
+
+  <!-- Favicon: assets/img/favicon.svg 파일만 교체하면 됩니다 -->
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="assets/css/style.css" />
+
+  <!-- JS가 비활성/실패한 경우에도 콘텐츠가 보이도록 (reveal 애니메이션 가드) -->
+  <script>document.documentElement.classList.add("js");</script>
+</head>
+<body>
+
+  <a class="skip-link" href="#main">본문으로 건너뛰기</a>
+
+  <!-- ============ HEADER / NAV ============ -->
+  <header class="site-header" id="siteHeader">
+    <div class="container header-inner">
+      <a class="brand" href="#home" aria-label="Home">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-text">[NAME]</span>
+      </a>
+
+      <nav class="nav" id="primaryNav" aria-label="주요 메뉴">
+        <ul class="nav-list">
+          <li><a class="nav-link" href="#home">Home</a></li>
+          <li><a class="nav-link" href="#about">About</a></li>
+          <li><a class="nav-link" href="#projects">Projects</a></li>
+          <li><a class="nav-link" href="#experience">Experience</a></li>
+          <li><a class="nav-link" href="#awards">Awards</a></li>
+          <li><a class="nav-link" href="#skills">Skills</a></li>
+          <li><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <button class="nav-toggle" id="navToggle" type="button"
+              aria-label="메뉴 열기" aria-expanded="false" aria-controls="primaryNav">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="home">
+      <div class="container hero-inner">
+        <p class="hero-eyebrow reveal">[ROLE / FIELD]</p>
+
+        <h1 class="hero-title reveal">[NAME]</h1>
+
+        <p class="hero-lead reveal">[SHORT INTRODUCTION]</p>
+
+        <div class="hero-actions reveal">
+          <a class="btn btn-primary" href="#projects">View Projects</a>
+          <!-- TODO: href 를 실제 링크로 교체 -->
+          <a class="btn btn-ghost" href="#" data-placeholder="github">GitHub</a>
+          <a class="btn btn-ghost" href="#" data-placeholder="email">Email</a>
+          <a class="btn btn-ghost" href="#" data-placeholder="resume">Resume</a>
+        </div>
+
+        <ul class="hero-meta reveal">
+          <li><span class="meta-key">Focus</span><span class="meta-val">[FOCUS AREA]</span></li>
+          <li><span class="meta-key">Location</span><span class="meta-val">[LOCATION]</span></li>
+          <li><span class="meta-key">Status</span><span class="meta-val">[STATUS]</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ ABOUT ============ -->
+    <section class="section" id="about">
+      <div class="container section-grid">
+        <div class="section-aside">
+          <p class="section-index">01</p>
+          <h2 class="section-title">About</h2>
+        </div>
+
+        <div class="section-body">
+          <p class="lead reveal">[ABOUT ME]</p>
+          <p class="muted reveal">[ABOUT ME — 상세 설명 문단이 들어갈 자리입니다.]</p>
+
+          <dl class="fact-list reveal">
+            <div class="fact">
+              <dt>Education</dt>
+              <dd>[EDUCATION]</dd>
+            </div>
+            <div class="fact">
+              <dt>Interests</dt>
+              <dd>[RESEARCH INTERESTS]</dd>
+            </div>
+            <div class="fact">
+              <dt>Currently</dt>
+              <dd>[CURRENT WORK]</dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PROJECTS ============ -->
+    <section class="section section-alt" id="projects">
+      <div class="container section-grid">
+        <div class="section-aside">
+          <p class="section-index">02</p>
+          <h2 class="section-title">Projects</h2>
+          <p class="section-desc">[PROJECTS INTRO]</p>
+        </div>
+
+        <div class="section-body">
+          <div class="project-grid">
+
+            <!-- 프로젝트 카드 템플릿 (복사해서 사용) -->
+            <article class="card project-card reveal">
+              <div class="project-thumb" aria-hidden="true">
+                <!-- <img src="assets/img/project-01.png" alt="" /> -->
+                <span>IMAGE</span>
+              </div>
+              <div class="project-body">
+                <div class="project-head">
+                  <h3 class="project-title">[PROJECT 01]</h3>
+                  <span class="project-period">[PERIOD]</span>
+                </div>
+                <p class="project-summary">[ONE LINE DESCRIPTION]</p>
+                <ul class="project-points">
+                  <li>[KEY WORK]</li>
+                  <li>[RESULT / IMPACT]</li>
+                </ul>
+                <ul class="tag-list">
+                  <li class="tag">[TECH]</li>
+                  <li class="tag">[TECH]</li>
+                  <li class="tag">[TECH]</li>
+                </ul>
+                <div class="project-links">
+                  <a class="link-inline" href="#">GitHub</a>
+                  <a class="link-inline" href="#">Demo</a>
+                </div>
+              </div>
+            </article>
+            <!-- 템플릿 끝 -->
+
+            <article class="card project-card reveal">
+              <div class="project-thumb" aria-hidden="true"><span>IMAGE</span></div>
+              <div class="project-body">
+                <div class="project-head">
+                  <h3 class="project-title">[PROJECT 02]</h3>
+                  <span class="project-period">[PERIOD]</span>
+                </div>
+                <p class="project-summary">[ONE LINE DESCRIPTION]</p>
+                <ul class="project-points">
+                  <li>[KEY WORK]</li>
+                  <li>[RESULT / IMPACT]</li>
+                </ul>
+                <ul class="tag-list">
+                  <li class="tag">[TECH]</li>
+                  <li class="tag">[TECH]</li>
+                  <li class="tag">[TECH]</li>
+                </ul>
+                <div class="project-links">
+                  <a class="link-inline" href="#">GitHub</a>
+                  <a class="link-inline" href="#">Demo</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="card project-card reveal">
+              <div class="project-thumb" aria-hidden="true"><span>IMAGE</span></div>
+              <div class="project-body">
+                <div class="project-head">
+                  <h3 class="project-title">[PROJECT 03]</h3>
+                  <span class="project-period">[PERIOD]</span>
+                </div>
+                <p class="project-summary">[ONE LINE DESCRIPTION]</p>
+                <ul class="project-points">
+                  <li>[KEY WORK]</li>
+                  <li>[RESULT / IMPACT]</li>
+                </ul>
+                <ul class="tag-list">
+                  <li class="tag">[TECH]</li>
+                  <li class="tag">[TECH]</li>
+                  <li class="tag">[TECH]</li>
+                </ul>
+                <div class="project-links">
+                  <a class="link-inline" href="#">GitHub</a>
+                  <a class="link-inline" href="#">Demo</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="card project-card reveal">
+              <div class="project-thumb" aria-hidden="true"><span>IMAGE</span></div>
+              <div class="project-body">
+                <div class="project-head">
+                  <h3 class="project-title">[PROJECT 04]</h3>
+                  <span class="project-period">[PERIOD]</span>
+                </div>
+                <p class="project-summary">[ONE LINE DESCRIPTION]</p>
+                <ul class="project-points">
+                  <li>[KEY WORK]</li>
+                  <li>[RESULT / IMPACT]</li>
+                </ul>
+                <ul class="tag-list">
+                  <li class="tag">[TECH]</li>
+                  <li class="tag">[TECH]</li>
+                  <li class="tag">[TECH]</li>
+                </ul>
+                <div class="project-links">
+                  <a class="link-inline" href="#">GitHub</a>
+                  <a class="link-inline" href="#">Demo</a>
+                </div>
+              </div>
+            </article>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ EXPERIENCE ============ -->
+    <section class="section" id="experience">
+      <div class="container section-grid">
+        <div class="section-aside">
+          <p class="section-index">03</p>
+          <h2 class="section-title">Experience</h2>
+          <p class="section-desc">[EXPERIENCE INTRO]</p>
+        </div>
+
+        <div class="section-body">
+          <ol class="timeline">
+
+            <li class="timeline-item reveal">
+              <div class="timeline-period">[PERIOD]</div>
+              <div class="timeline-content">
+                <h3 class="timeline-title">[EXPERIENCE 01]</h3>
+                <p class="timeline-org">[ORGANIZATION] · [ROLE]</p>
+                <ul class="timeline-points">
+                  <li>[DETAIL]</li>
+                  <li>[DETAIL]</li>
+                </ul>
+                <ul class="tag-list">
+                  <li class="tag">[TECH]</li>
+                  <li class="tag">[TECH]</li>
+                </ul>
+              </div>
+            </li>
+
+            <li class="timeline-item reveal">
+              <div class="timeline-period">[PERIOD]</div>
+              <div class="timeline-content">
+                <h3 class="timeline-title">[EXPERIENCE 02]</h3>
+                <p class="timeline-org">[ORGANIZATION] · [ROLE]</p>
+                <ul class="timeline-points">
+                  <li>[DETAIL]</li>
+                  <li>[DETAIL]</li>
+                </ul>
+                <ul class="tag-list">
+                  <li class="tag">[TECH]</li>
+                  <li class="tag">[TECH]</li>
+                </ul>
+              </div>
+            </li>
+
+            <li class="timeline-item reveal">
+              <div class="timeline-period">[PERIOD]</div>
+              <div class="timeline-content">
+                <h3 class="timeline-title">[EXPERIENCE 03]</h3>
+                <p class="timeline-org">[ORGANIZATION] · [ROLE]</p>
+                <ul class="timeline-points">
+                  <li>[DETAIL]</li>
+                </ul>
+                <ul class="tag-list">
+                  <li class="tag">[TECH]</li>
+                </ul>
+              </div>
+            </li>
+
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ AWARDS ============ -->
+    <section class="section section-alt" id="awards">
+      <div class="container section-grid">
+        <div class="section-aside">
+          <p class="section-index">04</p>
+          <h2 class="section-title">Awards</h2>
+          <p class="section-desc">[AWARDS INTRO]</p>
+        </div>
+
+        <div class="section-body">
+          <ul class="award-list">
+
+            <li class="award-item reveal">
+              <span class="award-year">[YEAR]</span>
+              <div class="award-content">
+                <h3 class="award-title">[AWARD 01]</h3>
+                <p class="award-org">[ORGANIZATION] · [RANK]</p>
+              </div>
+            </li>
+
+            <li class="award-item reveal">
+              <span class="award-year">[YEAR]</span>
+              <div class="award-content">
+                <h3 class="award-title">[AWARD 02]</h3>
+                <p class="award-org">[ORGANIZATION] · [RANK]</p>
+              </div>
+            </li>
+
+            <li class="award-item reveal">
+              <span class="award-year">[YEAR]</span>
+              <div class="award-content">
+                <h3 class="award-title">[AWARD 03]</h3>
+                <p class="award-org">[ORGANIZATION] · [RANK]</p>
+              </div>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SKILLS ============ -->
+    <section class="section" id="skills">
+      <div class="container section-grid">
+        <div class="section-aside">
+          <p class="section-index">05</p>
+          <h2 class="section-title">Skills</h2>
+          <p class="section-desc">[SKILLS INTRO]</p>
+        </div>
+
+        <div class="section-body">
+          <div class="skill-grid">
+
+            <div class="card skill-card reveal">
+              <h3 class="skill-category">Programming</h3>
+              <ul class="tag-list">
+                <li class="tag">[SKILL]</li>
+                <li class="tag">[SKILL]</li>
+                <li class="tag">[SKILL]</li>
+              </ul>
+            </div>
+
+            <div class="card skill-card reveal">
+              <h3 class="skill-category">AI / Machine Learning</h3>
+              <ul class="tag-list">
+                <li class="tag">[SKILL]</li>
+                <li class="tag">[SKILL]</li>
+                <li class="tag">[SKILL]</li>
+              </ul>
+            </div>
+
+            <div class="card skill-card reveal">
+              <h3 class="skill-category">Data Science</h3>
+              <ul class="tag-list">
+                <li class="tag">[SKILL]</li>
+                <li class="tag">[SKILL]</li>
+                <li class="tag">[SKILL]</li>
+              </ul>
+            </div>
+
+            <div class="card skill-card reveal">
+              <h3 class="skill-category">Framework / Library</h3>
+              <ul class="tag-list">
+                <li class="tag">[SKILL]</li>
+                <li class="tag">[SKILL]</li>
+                <li class="tag">[SKILL]</li>
+              </ul>
+            </div>
+
+            <div class="card skill-card reveal">
+              <h3 class="skill-category">Tools</h3>
+              <ul class="tag-list">
+                <li class="tag">[SKILL]</li>
+                <li class="tag">[SKILL]</li>
+                <li class="tag">[SKILL]</li>
+              </ul>
+            </div>
+
+            <div class="card skill-card reveal">
+              <h3 class="skill-category">Deployment</h3>
+              <ul class="tag-list">
+                <li class="tag">[SKILL]</li>
+                <li class="tag">[SKILL]</li>
+                <li class="tag">[SKILL]</li>
+              </ul>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="section section-alt" id="contact">
+      <div class="container section-grid">
+        <div class="section-aside">
+          <p class="section-index">06</p>
+          <h2 class="section-title">Contact</h2>
+        </div>
+
+        <div class="section-body">
+          <p class="contact-headline reveal">[CONTACT MESSAGE]</p>
+
+          <ul class="contact-list reveal">
+            <li class="contact-item">
+              <span class="contact-key">Email</span>
+              <a class="contact-val" href="#">[EMAIL]</a>
+            </li>
+            <li class="contact-item">
+              <span class="contact-key">GitHub</span>
+              <a class="contact-val" href="#">[GITHUB]</a>
+            </li>
+            <li class="contact-item">
+              <span class="contact-key">LinkedIn</span>
+              <a class="contact-val" href="#">[LINKEDIN]</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p class="footer-brand">[NAME]</p>
+      <p class="footer-note">&copy; <span id="year"></span> [NAME]. All rights reserved.</p>
+      <a class="footer-top" href="#home">Back to top</a>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

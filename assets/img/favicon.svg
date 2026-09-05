@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Portfolio">
+  <!-- 임시 favicon입니다. 이 파일만 교체하면 브라우저 탭 아이콘이 바뀝니다. -->
+  <rect width="64" height="64" rx="14" fill="#101318"/>
+  <rect x="18" y="18" width="12" height="12" rx="3" fill="#2f5cff"/>
+  <rect x="34" y="18" width="12" height="12" rx="3" fill="#ffffff" opacity="0.35"/>
+  <rect x="18" y="34" width="12" height="12" rx="3" fill="#ffffff" opacity="0.35"/>
+  <rect x="34" y="34" width="12" height="12" rx="3" fill="#ffffff" opacity="0.85"/>
+</svg>
