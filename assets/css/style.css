@@ -343,8 +343,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   background: var(--bg-subtle);
 }
 
-.intro-actions { display: grid; gap: 8px; }
-.intro-actions-row { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.intro-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
 .intro-actions .btn { width: 100%; padding-inline: 12px; }
 
 .intro-eyebrow {
