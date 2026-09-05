@@ -448,6 +448,14 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   white-space: nowrap;
 }
 
+/* 소속·팀 규모·역할 등 프로젝트 맥락 한 줄 */
+.project-context {
+  margin-top: -8px;
+  font-family: var(--font-mono);
+  font-size: var(--fs-micro);
+  color: var(--text-tertiary);
+}
+
 .project-summary { font-size: var(--fs-small); color: var(--text-secondary); }
 
 .project-points {

@@ -126,85 +126,129 @@
         <div class="section-aside">
           <p class="section-index">01</p>
           <h2 class="section-title">Projects</h2>
-          <p class="section-desc">[PROJECTS INTRO]</p>
         </div>
 
         <div class="section-body">
           <div class="project-grid">
 
-            <!-- 프로젝트 카드 템플릿 (복사해서 사용) -->
             <article class="card project-card reveal">
-              <div class="project-thumb" aria-hidden="true">
-                <!-- <img src="assets/img/project-01.png" alt="" /> -->
-                <span>IMAGE</span>
+              <div class="project-thumb">
+                <img src="https://raw.githubusercontent.com/minhwan123/ppg-arrhythmia-detection/main/assets/images/fig1_pipeline_overview.png"
+                     alt="" loading="lazy" />
               </div>
               <div class="project-body">
                 <div class="project-head">
-                  <h3 class="project-title">[PROJECT 01]</h3>
-                  <span class="project-period">[PERIOD]</span>
+                  <h3 class="project-title">PPG 기반 부정맥 탐지 프레임워크</h3>
+                  <span class="project-period">2025.12 ~ 2026.07</span>
                 </div>
-                <p class="project-summary">[ONE LINE DESCRIPTION]</p>
+                <p class="project-context">동국대학교 캡스톤디자인 · 4인 팀 · 공동 제1저자</p>
+                <p class="project-summary">PPG 신호만으로 부정맥을 탐지·구간분할하고, LLM이 근거 기반 진단 리포트까지 생성하는 end-to-end 멀티모달 프레임워크</p>
                 <ul class="project-points">
-                  <li>[KEY WORK]</li>
-                  <li>[RESULT / IMPACT]</li>
+                  <li>CLIP 대조학습으로 PPG 파형·임상 정보·리듬 텍스트를 하나의 임베딩 공간에 정렬하고, 이를 초기화한 멀티태스크 1D U-Net으로 4-class 분류와 이상 구간 분할을 동시 수행</li>
+                  <li>모델 예측·유사 환자 검색·가이드라인을 근거로 RAG 기반 LLM이 진단 리포트를 생성하고, 전 과정을 Streamlit 웹 서비스로 배포</li>
+                  <li>Accuracy 0.863 → 0.912, Dice 0.582 → 0.717로 개선 · MDPI Sensors(SCIE) 게재 및 소프트웨어 저작권 등록</li>
                 </ul>
                 <ul class="tag-list">
-                  <li class="tag">[TECH]</li>
-                  <li class="tag">[TECH]</li>
-                  <li class="tag">[TECH]</li>
+                  <li class="tag">PyTorch</li>
+                  <li class="tag">BioBERT</li>
+                  <li class="tag">Gemini</li>
+                  <li class="tag">Streamlit</li>
                 </ul>
                 <div class="project-links">
-                  <a class="link-inline" href="#">GitHub</a>
-                  <a class="link-inline" href="#">Demo</a>
-                </div>
-              </div>
-            </article>
-            <!-- 템플릿 끝 -->
-
-            <article class="card project-card reveal">
-              <div class="project-thumb" aria-hidden="true"><span>IMAGE</span></div>
-              <div class="project-body">
-                <div class="project-head">
-                  <h3 class="project-title">[PROJECT 02]</h3>
-                  <span class="project-period">[PERIOD]</span>
-                </div>
-                <p class="project-summary">[ONE LINE DESCRIPTION]</p>
-                <ul class="project-points">
-                  <li>[KEY WORK]</li>
-                  <li>[RESULT / IMPACT]</li>
-                </ul>
-                <ul class="tag-list">
-                  <li class="tag">[TECH]</li>
-                  <li class="tag">[TECH]</li>
-                  <li class="tag">[TECH]</li>
-                </ul>
-                <div class="project-links">
-                  <a class="link-inline" href="#">GitHub</a>
-                  <a class="link-inline" href="#">Demo</a>
+                  <a class="link-inline" href="https://github.com/minhwan123/ppg-arrhythmia-detection"
+                     target="_blank" rel="noopener noreferrer">GitHub</a>
+                  <a class="link-inline" href="https://www.mdpi.com/1424-8220/26/8/2316"
+                     target="_blank" rel="noopener noreferrer">Paper</a>
                 </div>
               </div>
             </article>
 
             <article class="card project-card reveal">
-              <div class="project-thumb" aria-hidden="true"><span>IMAGE</span></div>
+              <div class="project-thumb">
+                <img src="https://raw.githubusercontent.com/minhwan123/satellite-air-pollution-detection/master/mission1/results/val_batch0_pred.jpg"
+                     alt="" loading="lazy" />
+              </div>
               <div class="project-body">
                 <div class="project-head">
-                  <h3 class="project-title">[PROJECT 03]</h3>
-                  <span class="project-period">[PERIOD]</span>
+                  <h3 class="project-title">위성 영상 기반 대기오염 배출원 탐지</h3>
+                  <span class="project-period">2026.07</span>
                 </div>
-                <p class="project-summary">[ONE LINE DESCRIPTION]</p>
+                <p class="project-context">과기정통부 데이터 크리에이터 캠프 · 4인 팀 · 팀장</p>
+                <p class="project-summary">위성 영상에서 굴뚝을 탐지하고 높이를 추정한 뒤, 배출원이 위치한 산업단지 영역까지 분할하는 3단계 AI 파이프라인</p>
                 <ul class="project-points">
-                  <li>[KEY WORK]</li>
-                  <li>[RESULT / IMPACT]</li>
+                  <li>YOLOv8m 굴뚝 탐지를 담당 — VIA 포맷 라벨을 YOLO 좌표로 변환하고 9,000여 개 라벨·이미지 쌍의 누락을 자동 검증하는 전처리 파이프라인 구축</li>
+                  <li>높이 회귀 모델의 오차가 50~200m 구간에 집중되는 원인을 데이터 분포 관점에서 진단하고, 가중 샘플링으로 개선</li>
+                  <li>Detection mAP50-95 0.873 · Regression RMSE 3.62m · Segmentation mIoU 0.921</li>
                 </ul>
                 <ul class="tag-list">
-                  <li class="tag">[TECH]</li>
-                  <li class="tag">[TECH]</li>
-                  <li class="tag">[TECH]</li>
+                  <li class="tag">PyTorch</li>
+                  <li class="tag">YOLOv8</li>
+                  <li class="tag">EfficientNet</li>
+                  <li class="tag">U-Net</li>
                 </ul>
                 <div class="project-links">
-                  <a class="link-inline" href="#">GitHub</a>
-                  <a class="link-inline" href="#">Demo</a>
+                  <a class="link-inline" href="https://github.com/minhwan123/satellite-air-pollution-detection"
+                     target="_blank" rel="noopener noreferrer">GitHub</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="card project-card reveal">
+              <div class="project-thumb">
+                <img src="https://raw.githubusercontent.com/minhwan123/CustomFace/master/docs/images/cartoon-result.png"
+                     alt="" loading="lazy" />
+              </div>
+              <div class="project-body">
+                <div class="project-head">
+                  <h3 class="project-title">CustomFace</h3>
+                  <span class="project-period">2026.07</span>
+                </div>
+                <p class="project-context">동국대학교 HCI 수업 팀 프로젝트</p>
+                <p class="project-summary">웹캠으로 촬영한 얼굴을 실시간 분석해 원하는 부위를 과장하고 카툰 스타일로 변환하는 캐리커처 생성기</p>
+                <ul class="project-points">
+                  <li>MediaPipe Face Mesh로 468개 얼굴 랜드마크를 추출하고, Thin Plate Spline 워핑으로 눈·코·입·얼굴형을 선택적으로 왜곡</li>
+                  <li>엣지 검출과 양방향 필터를 조합한 카툰 효과, 히스토그램 평활화·스트레칭 두 가지 색상 전처리 비교 적용</li>
+                  <li>FER 기반 감정 일관성 점수로 왜곡 후에도 원래 표정이 유지되는지 정량 평가</li>
+                </ul>
+                <ul class="tag-list">
+                  <li class="tag">OpenCV</li>
+                  <li class="tag">MediaPipe</li>
+                  <li class="tag">PyQt5</li>
+                  <li class="tag">FER</li>
+                </ul>
+                <div class="project-links">
+                  <a class="link-inline" href="https://github.com/minhwan123/CustomFace"
+                     target="_blank" rel="noopener noreferrer">GitHub</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="card project-card reveal">
+              <div class="project-thumb">
+                <img src="https://raw.githubusercontent.com/minhwan123/Cullect/main/docs/images/banner.png"
+                     alt="" loading="lazy" />
+              </div>
+              <div class="project-body">
+                <div class="project-head">
+                  <h3 class="project-title">Cullect</h3>
+                  <span class="project-period">2025</span>
+                </div>
+                <p class="project-context">동국대학교 공개SW프로젝트 · 팀장 · 추천 시스템 담당</p>
+                <p class="project-summary">사용자 프로필과 행동 로그를 기반으로 전시·공연 등 문화 콘텐츠를 추천하는 하이브리드 추천 시스템</p>
+                <ul class="project-points">
+                  <li>프로필 코사인 유사도 기반 협업 필터링과 XGBoost 랭킹 모델을 결합한 하이브리드 추천 로직 설계</li>
+                  <li>지역 거리, Word2Vec 관심 키워드, 찜 이력의 time decay를 피처로 사용해 콘텐츠별 선호 확률을 학습</li>
+                  <li>FastAPI로 추천 API를 서빙하고, APScheduler로 매일 새벽 자동 재학습 파이프라인 구성</li>
+                </ul>
+                <ul class="tag-list">
+                  <li class="tag">FastAPI</li>
+                  <li class="tag">XGBoost</li>
+                  <li class="tag">Word2Vec</li>
+                  <li class="tag">MySQL</li>
+                </ul>
+                <div class="project-links">
+                  <a class="link-inline" href="https://github.com/minhwan123/Cullect"
+                     target="_blank" rel="noopener noreferrer">GitHub</a>
                 </div>
               </div>
             </article>
@@ -213,22 +257,55 @@
               <div class="project-thumb" aria-hidden="true"><span>IMAGE</span></div>
               <div class="project-body">
                 <div class="project-head">
-                  <h3 class="project-title">[PROJECT 04]</h3>
-                  <span class="project-period">[PERIOD]</span>
+                  <h3 class="project-title">Car-BTI</h3>
+                  <span class="project-period">2026.06 ~ 2026.07</span>
                 </div>
-                <p class="project-summary">[ONE LINE DESCRIPTION]</p>
+                <p class="project-context">SKN 34기 팀 프로젝트 · 4인 팀 · 팀장</p>
+                <p class="project-summary">전국 자동차 등록 데이터를 MBTI 스타일로 시각화하고, 맞춤 차량 추천과 AI 상담 챗봇을 제공하는 대시보드</p>
                 <ul class="project-points">
-                  <li>[KEY WORK]</li>
-                  <li>[RESULT / IMPACT]</li>
+                  <li>국토부 월별 등록 통계를 지역·연료·차종·성별 축으로 전처리해 MySQL에 적재하는 ETL 파이프라인 구축</li>
+                  <li>네이버 뉴스 API 연동과 Streamlit 대시보드 화면 설계·구현</li>
+                  <li>팀장으로 Git 브랜치 전략 수립과 프로토타입 제작을 담당</li>
                 </ul>
                 <ul class="tag-list">
-                  <li class="tag">[TECH]</li>
-                  <li class="tag">[TECH]</li>
-                  <li class="tag">[TECH]</li>
+                  <li class="tag">Python</li>
+                  <li class="tag">Streamlit</li>
+                  <li class="tag">MySQL</li>
+                  <li class="tag">Plotly</li>
                 </ul>
                 <div class="project-links">
-                  <a class="link-inline" href="#">GitHub</a>
-                  <a class="link-inline" href="#">Demo</a>
+                  <a class="link-inline" href="https://github.com/minhwan123/Car-BTI"
+                     target="_blank" rel="noopener noreferrer">GitHub</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="card project-card reveal">
+              <div class="project-thumb">
+                <img src="https://raw.githubusercontent.com/minhwan123/DevLens/master/assets/DevLens.png"
+                     alt="" loading="lazy" />
+              </div>
+              <div class="project-body">
+                <div class="project-head">
+                  <h3 class="project-title">DevLens</h3>
+                  <span class="project-period">2026.08</span>
+                </div>
+                <p class="project-context">개인 프로젝트</p>
+                <p class="project-summary">GitHub 계정의 커밋·코드·문서를 근거로 커리어 역량과 목표 직무 적합도를 진단하는 웹 서비스</p>
+                <ul class="project-points">
+                  <li>6개 축 레이더 차트, 직무 적합도 TOP 3, 스킬 갭과 학습 로드맵을 "어느 레포에서 왜 그렇게 판단했는지" 근거와 함께 제시</li>
+                  <li>Sentence-Transformers 임베딩과 FAISS 유사도 검색으로 프로젝트·스킬을 추천하고, Gemini가 자연어 코멘터리를 생성</li>
+                  <li>도메인·애플리케이션·인프라를 분리한 클린 아키텍처와 CI(pytest·ruff·mypy strict) 구성, PDF 리포트 내보내기 지원</li>
+                </ul>
+                <ul class="tag-list">
+                  <li class="tag">FastAPI</li>
+                  <li class="tag">React</li>
+                  <li class="tag">FAISS</li>
+                  <li class="tag">Gemini</li>
+                </ul>
+                <div class="project-links">
+                  <a class="link-inline" href="https://github.com/minhwan123/DevLens"
+                     target="_blank" rel="noopener noreferrer">GitHub</a>
                 </div>
               </div>
             </article>
