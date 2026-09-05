@@ -575,6 +575,26 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .award-list + .group-label,
 .pub-list + .group-label { margin-top: 48px; }
 
+/* 증빙 이미지(논문 첫 페이지·수상 인증서)를 항목 오른쪽에 작게 붙입니다 */
+.pub-item.has-thumb,
+.award-item.has-thumb { grid-template-columns: 150px minmax(0, 1fr) 190px; }
+
+.item-thumb {
+  display: block;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  background: var(--bg-elevated);
+  transition: border-color var(--dur) var(--ease), box-shadow var(--dur) var(--ease),
+              transform var(--dur) var(--ease);
+}
+.item-thumb:hover {
+  border-color: var(--border-strong);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+.item-thumb img { width: 100%; height: auto; display: block; }
+
 /* Awards */
 .award-list { border-top: 1px solid var(--border); }
 .award-item {
@@ -707,11 +727,14 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   .fact,
   .timeline-item,
   .award-item,
+  .award-item.has-thumb,
   .pub-item,
+  .pub-item.has-thumb,
   .contact-item {
     grid-template-columns: 1fr;
     gap: 8px;
   }
+  .item-thumb { margin-top: 8px; max-width: 320px; }
   .fact dt, .timeline-period, .award-year, .pub-year, .contact-key { padding-top: 0; }
 
   .intro-grid {
