@@ -365,6 +365,8 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 
 .intro-main .lead { margin-top: 28px; max-width: 62ch; }
 .intro-main .muted { margin-top: 18px; max-width: 62ch; }
+/* 소개 문단이 없을 때 이름과 정보 목록 사이 간격 */
+.intro-main .fact-list { margin-top: 36px; }
 
 .fact-list {
   margin-top: 44px;
