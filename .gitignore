@@ -1,0 +1,7 @@
+# 콘텐츠 작성용 임시 파일 (개인정보 포함 — 저장소에 올리지 않음)
+content-draft.md
+
+# OS / 에디터
+.DS_Store
+Thumbs.db
+.vscode/
