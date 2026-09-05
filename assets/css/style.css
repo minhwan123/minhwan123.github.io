@@ -366,24 +366,6 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   gap: 10px;
 }
 
-.hero-meta {
-  margin-top: 56px;
-  padding-top: 28px;
-  border-top: 1px solid var(--border);
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 20px 32px;
-}
-.hero-meta li { display: flex; flex-direction: column; gap: 4px; }
-.meta-key {
-  font-family: var(--font-mono);
-  font-size: var(--fs-micro);
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--text-tertiary);
-}
-.meta-val { font-size: var(--fs-small); color: var(--text-primary); }
-
 /* About */
 .section-body > .lead + .muted { margin-top: 20px; max-width: 62ch; }
 .section-body > .lead { max-width: 62ch; }
