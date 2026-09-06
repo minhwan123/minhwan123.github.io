@@ -582,6 +582,8 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 
 .item-thumb {
   display: block;
+  /* 그리드 기본값(stretch)이면 박스가 행 높이만큼 늘어나 이미지가 위로 붙습니다 */
+  align-self: center;
   border: 1px solid var(--border);
   border-radius: var(--radius-sm);
   overflow: hidden;
