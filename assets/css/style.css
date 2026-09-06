@@ -343,8 +343,22 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   background: var(--bg-subtle);
 }
 
-.intro-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
-.intro-actions .btn { width: 100%; padding-inline: 12px; }
+/* 아이콘 박스의 안쪽 여백만큼 당겨 사진 왼쪽 선과 맞춥니다 */
+.intro-actions { display: flex; align-items: center; gap: 6px; margin-left: -10px; }
+
+/* 아이콘 링크 (이메일 · GitHub · 블로그) */
+.icon-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: var(--radius-sm);
+  color: var(--text-tertiary);
+  transition: color var(--dur) var(--ease), background var(--dur) var(--ease);
+}
+.icon-link:hover { color: var(--accent); background: var(--bg-subtle); }
+.icon-link svg { width: 22px; height: 22px; display: block; }
 
 .intro-eyebrow {
   font-family: var(--font-mono);
@@ -748,7 +762,6 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
     gap: 28px;
   }
   .intro-portrait { width: min(180px, 50%); }
-  .intro-actions { max-width: 340px; }
   .project-grid { grid-template-columns: 1fr; }
   .footer-inner { flex-direction: column; align-items: flex-start; }
 }
