@@ -578,6 +578,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 /* 증빙 이미지(논문 첫 페이지·수상 인증서)를 항목 오른쪽에 작게 붙입니다 */
 .pub-item.has-thumb,
 .award-item.has-thumb { grid-template-columns: 150px minmax(0, 1fr) 190px; }
+.timeline-item.has-thumb { grid-template-columns: 150px minmax(0, 1fr) 170px; }
 
 .item-thumb {
   display: block;
@@ -726,6 +727,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 
   .fact,
   .timeline-item,
+  .timeline-item.has-thumb,
   .award-item,
   .award-item.has-thumb,
   .pub-item,
