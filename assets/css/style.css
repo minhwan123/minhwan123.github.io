@@ -51,6 +51,46 @@
   /* Motion */
   --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
   --dur:  0.25s;
+
+  /* 문서 이미지(수료증·논문)는 원본이 흰 배경이라 테마와 무관하게 밝게 둡니다 */
+  --paper: #f2f4f7;
+}
+
+/* ---------- 1-1) Dark theme ---------- */
+/* 시스템이 다크이고 사용자가 라이트를 고르지 않았을 때 */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg:             #0e1116;
+    --bg-subtle:      #141920;
+    --bg-elevated:    #161c24;
+    --text-primary:   #e7eaee;
+    --text-secondary: #a2aab8;
+    --text-tertiary:  #6f7886;
+    --accent:         #6b8dff;
+    --accent-hover:   #89a4ff;
+    --accent-soft:    #16203a;
+    --border:         #242c37;
+    --border-strong:  #354050;
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
+    --shadow-md: 0 8px 28px rgba(0, 0, 0, 0.5);
+  }
+}
+
+/* 사용자가 직접 다크를 선택했을 때 (시스템 설정보다 우선) */
+:root[data-theme="dark"] {
+  --bg:             #0e1116;
+  --bg-subtle:      #141920;
+  --bg-elevated:    #161c24;
+  --text-primary:   #e7eaee;
+  --text-secondary: #a2aab8;
+  --text-tertiary:  #6f7886;
+  --accent:         #6b8dff;
+  --accent-hover:   #89a4ff;
+  --accent-soft:    #16203a;
+  --border:         #242c37;
+  --border-strong:  #354050;
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 8px 28px rgba(0, 0, 0, 0.5);
 }
 
 /* ---------- 2) Reset ---------- */
@@ -129,6 +169,18 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   color: var(--text-tertiary);
   margin-bottom: 10px;
 }
+/* 섹션이 화면에 들어오면 번호 아래로 선이 그어집니다 */
+.section-index::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 1px;
+  margin-top: 10px;
+  background: var(--border-strong);
+  transition: width 0.7s var(--ease) 0.15s;
+}
+.js .section-aside.is-visible .section-index::after { width: 56px; }
+html:not(.js) .section-index::after { width: 56px; }
 
 .section-title {
   font-size: var(--fs-h2);
@@ -153,13 +205,26 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(255, 255, 255, 0.78);
+  background: color-mix(in srgb, var(--bg) 80%, transparent);
   backdrop-filter: saturate(180%) blur(12px);
   -webkit-backdrop-filter: saturate(180%) blur(12px);
   border-bottom: 1px solid transparent;
   transition: border-color var(--dur) var(--ease), background var(--dur) var(--ease);
 }
 .site-header.is-scrolled { border-bottom-color: var(--border); }
+
+/* 스크롤 진행 바 — 헤더 아래쪽 경계선 위에 얹힙니다 */
+.scroll-progress {
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  height: 2px;
+  width: 0;
+  background: var(--accent);
+  border-radius: 0 2px 2px 0;
+  transition: width 0.1s linear;
+  pointer-events: none;
+}
 
 .header-inner {
   height: var(--header-h);
@@ -196,6 +261,30 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 }
 .nav-link:hover { color: var(--text-primary); background: var(--bg-subtle); }
 .nav-link.is-active { color: var(--text-primary); font-weight: 500; }
+
+/* 헤더 우측 버튼 묶음 */
+.header-actions { display: flex; align-items: center; gap: 4px; }
+
+.theme-toggle {
+  width: 40px; height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  color: var(--text-secondary);
+  transition: color var(--dur) var(--ease), background var(--dur) var(--ease);
+}
+.theme-toggle:hover { color: var(--text-primary); background: var(--bg-subtle); }
+.theme-toggle svg { width: 18px; height: 18px; display: block; }
+/* 라이트일 때는 달, 다크일 때는 해를 보여줍니다 */
+.theme-toggle .icon-sun { display: none; }
+:root[data-theme="dark"] .theme-toggle .icon-sun { display: block; }
+:root[data-theme="dark"] .theme-toggle .icon-moon { display: none; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .theme-toggle .icon-sun { display: block; }
+  :root:not([data-theme="light"]) .theme-toggle .icon-moon { display: none; }
+}
 
 .nav-toggle {
   display: none;
@@ -269,7 +358,9 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   border-radius: var(--radius-pill);
   padding: 4px 10px;
   white-space: nowrap;
+  transition: border-color var(--dur) var(--ease), color var(--dur) var(--ease);
 }
+.card:hover .tag { border-color: var(--border-strong); }
 
 /* Inline link */
 .link-inline {
@@ -415,13 +506,16 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .project-card:hover {
   border-color: var(--border-strong);
   box-shadow: var(--shadow-md);
-  transform: translateY(-2px);
+  transform: translateY(-4px);
 }
+/* 카드에 마우스를 올리면 썸네일이 살짝 확대됩니다 */
+.project-card:hover .project-thumb img { transform: scale(1.04); }
+.project-thumb img { transition: transform 0.45s var(--ease); }
 
 /* 원본 비율이 제각각이라 잘라내지 않고(contain) 여백 안에 맞춥니다 */
 .project-thumb {
   aspect-ratio: 16 / 10;
-  background: var(--bg-subtle);
+  background: var(--paper);
   border-bottom: 1px solid var(--border);
   display: flex;
   align-items: center;
@@ -601,14 +695,14 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   border: 1px solid var(--border);
   border-radius: var(--radius-sm);
   overflow: hidden;
-  background: var(--bg-elevated);
+  background: var(--paper);
   transition: border-color var(--dur) var(--ease), box-shadow var(--dur) var(--ease),
               transform var(--dur) var(--ease);
 }
 .item-thumb:hover {
-  border-color: var(--border-strong);
+  border-color: var(--accent);
   box-shadow: var(--shadow-md);
-  transform: translateY(-2px);
+  transform: translateY(-3px);
 }
 .item-thumb img { width: 100%; height: auto; display: block; }
 
@@ -643,7 +737,11 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   gap: 16px;
 }
 .skill-card { padding: 22px; display: grid; gap: 14px; align-content: start; }
-.skill-card:hover { border-color: var(--border-strong); box-shadow: var(--shadow-md); }
+.skill-card:hover {
+  border-color: var(--border-strong);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-3px);
+}
 .skill-category {
   font-size: var(--fs-small);
   font-weight: 600;
@@ -770,8 +868,8 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 /* JS가 켜져 있을 때만 숨겼다가 등장시킵니다 (JS 없으면 그대로 노출) */
 .js .reveal {
   opacity: 0;
-  transform: translateY(12px);
-  transition: opacity 0.5s var(--ease), transform 0.5s var(--ease);
+  transform: translateY(18px);
+  transition: opacity 0.55s var(--ease), transform 0.55s var(--ease);
 }
 .js .reveal.is-visible { opacity: 1; transform: none; }
 

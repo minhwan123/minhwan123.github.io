@@ -25,8 +25,14 @@
 
   <link rel="stylesheet" href="assets/css/style.css" />
 
-  <!-- JS가 비활성/실패한 경우에도 콘텐츠가 보이도록 (reveal 애니메이션 가드) -->
-  <script>document.documentElement.classList.add("js");</script>
+  <!-- JS 가드 + 저장된 테마를 렌더 전에 적용해 깜빡임을 막습니다 -->
+  <script>
+    document.documentElement.classList.add("js");
+    try {
+      var t = localStorage.getItem("theme");
+      if (t === "dark" || t === "light") document.documentElement.setAttribute("data-theme", t);
+    } catch (e) {}
+  </script>
 </head>
 <body>
 
@@ -52,12 +58,29 @@
         </ul>
       </nav>
 
-      <button class="nav-toggle" id="navToggle" type="button"
-              aria-label="메뉴 열기" aria-expanded="false" aria-controls="primaryNav">
-        <span class="nav-toggle-bar"></span>
-        <span class="nav-toggle-bar"></span>
-      </button>
+      <div class="header-actions">
+        <button class="theme-toggle" id="themeToggle" type="button"
+                aria-label="다크 모드 전환" title="테마 전환">
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+               stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+          </svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+               stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4" />
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" />
+          </svg>
+        </button>
+
+        <button class="nav-toggle" id="navToggle" type="button"
+                aria-label="메뉴 열기" aria-expanded="false" aria-controls="primaryNav">
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+        </button>
+      </div>
     </div>
+
+    <div class="scroll-progress" id="scrollProgress"></div>
   </header>
 
   <main id="main">
@@ -481,7 +504,7 @@
                 <p class="timeline-org">과학기술정보통신부 주최 · 4인 팀 팀장</p>
                 <ul class="timeline-points">
                   <li>위성 영상 기반 대기오염 배출원 탐지 3개 미션(Detection · Regression · Segmentation) 수행</li>
-                  <li>상세 내용은 Projects 섹션 참조</li>
+                  <li>상세 내용은 <a class="link-inline" href="#projects">Projects 섹션</a> 참조</li>
                 </ul>
                 <div class="project-links">
                   <a class="link-inline" href="https://kbig.kr/portal/kbig/camp.page"
